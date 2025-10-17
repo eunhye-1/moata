@@ -37,7 +37,7 @@
 |------|------|------------|
 | 문서연 | Backend | Spring Boot 서버 구축, 실시간 채팅 구현 |
 | 윤은혜 | Frontend | React 기반 UI 설계 및 지도 API 연동 |
-| 최희원 | Database | DB 및 API 설계, 커뮤니티 기능 구현 |
+| 최희원 | Backend | DB 및 API 설계, 커뮤니티 기능 구현 |
 
 ---
 
