@@ -30,5 +30,16 @@ public class MainController
     {
     		return "profile";
     }
+    @GetMapping("/community_detail")
+    public String community_detail()
+    {
+    		return "community_detail";
+    }
+    
+    @GetMapping("/community_write")
+    public String community_write()
+    {
+    		return "community_write";
+    }
 }
                                       
