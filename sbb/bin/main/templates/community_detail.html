@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 상세 - TaxiShare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">T</span>
+                </div>
+                <span class="text-xl font-bold">TaxiShare</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="index.html" class="text-gray-600 hover:text-gray-900">홈</a>
+                <a href="matching.html" class="text-gray-600 hover:text-gray-900">매칭</a>
+                <a href="chat.html" class="text-gray-600 hover:text-gray-900">채팅</a>
+                <a href="community.html" class="text-blue-600 font-medium">커뮤니티</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="community.html">
+                <button class="mb-6 px-4 py-2 border rounded-lg">← 목록으로</button>
+            </a>
+
+            <!-- Main Post -->
+            <div class="bg-white border rounded-lg shadow-xl p-8 mb-6">
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">고정</span>
+                        <span class="border text-xs px-2 py-1 rounded">정기경로</span>
+                    </div>
+                    <h1 class="text-3xl font-bold mb-4">강남역 → 여의도 출퇴근 정기 멤버 모집합니다!</h1>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-xs px-2 py-1 rounded">#강남역</span>
+                        <span class="bg-gray-100 text-xs px-2 py-1 rounded">#여의도</span>
+                        <span class="bg-gray-100 text-xs px-2 py-1 rounded">#정기</span>
+                    </div>
+                </div>
+
+                <!-- Author -->
+                <div class="flex items-center justify-between mb-6 pb-6 border-b">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">김민수</div>
+                            <div class="flex items-center gap-3 text-sm text-gray-600">
+                                <span>⭐ 4.8</span>
+                                <span>127회 이용</span>
+                                <span>2025-01-15 14:30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="px-4 py-2 border rounded-lg">채팅하기</button>
+                </div>
+
+                <!-- Content -->
+                <div class="prose max-w-none mb-6">
+                    <p class="leading-relaxed">매일 오전 8시 강남역에서 여의도로 출근하는 정기 택시 멤버를 찾고 있어요. 현재 2명이고 2명 더 모집중입니다.</p>
+                    <p class="leading-relaxed mt-4">한 달에 약 15만원 정도 절약할 수 있어요. 출근 시간이 비슷하신 분들과 함께 하면 좋을 것 같습니다.</p>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center justify-between pt-6 border-t">
+                    <div class="flex items-center gap-6 text-sm text-gray-600">
+                        <span>👁️ 156</span>
+                        <span>💬 8</span>
+                    </div>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg">❤️ 좋아요 24</button>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="bg-white border rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-6">댓글 <span class="text-blue-600">3</span></h2>
+                
+                <div class="mb-6">
+                    <textarea placeholder="댓글을 입력하세요..." 
+                              class="w-full px-3 py-2 border rounded-lg mb-2"></textarea>
+                    <div class="flex justify-end">
+                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">댓글 작성</button>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 bg-green-500 rounded-full"></div>
+                        <div class="flex-1">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-sm">이지영</span>
+                                    <span class="text-xs text-gray-500">2025-01-15 15:10</span>
+                                </div>
+                                <p class="text-sm">저도 비슷한 시간대에 출근하는데 관심 있어요!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

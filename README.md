@@ -36,7 +36,7 @@
 | 이름 | 역할 | 주요 담당 |
 |------|------|------------|
 | 문서연 | Backend | Spring Boot 서버 구축, 실시간 채팅 구현 |
-| 윤은혜 | Frontend | React 기반 UI 설계 및 지도 API 연동 |
+| 윤은혜 | Frontend | UI 설계 및 지도 API 연동 |
 | 최희원 | Backend | DB 및 API 설계, 커뮤니티 기능 구현 |
 
 ---
@@ -45,7 +45,7 @@
 
 | 구분 | 사용 기술 |
 |------|------------|
-| Frontend | React |
+| Frontend | HTML, CSS, JavaScript |
 | Backend | Spring Boot, eclise , MySQL |
 | Realtime | WebSocket, STOMP |
 | DevOps | GitHub |
