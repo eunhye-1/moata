@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="headerLayout">
+	<header class="border-b border-gray-200 bg-white bg-opacity-80 backdrop-blur-md sticky top-0 z-50">
+			  <!-- Changed layout to center navigation menu -->
+			  <div class="container mx-auto px-4 py-4 flex items-center justify-center relative">
+			  <a href="/" class="absolute left-4">
+			    <div class="flex items-center gap-2">
+			      <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+			        <span class="text-white font-bold text-lg">M</span>
+			      </div>
+			      <span class="text-xl font-bold text-gray-900">Moata</span>
+			    </div>
+			   </a>
+			    <nav class="hidden md:flex items-center gap-6">
+			      <a href="/chat" class="text-gray-600 hover:text-gray-900 transition-colors">채팅</a>
+			      <a href="/matching" class="text-gray-600 hover:text-gray-900 transition-colors">매칭</a>
+			      <a href="/community" class="text-gray-600 hover:text-gray-900 transition-colors">커뮤니티</a>
+			      <a href="/profile" class="text-gray-600 hover:text-gray-900 transition-colors">프로필</a>
+			    </nav>
+			    <div class="flex items-center gap-3 absolute right-4">
+			      <a href="/login">
+			        <button class="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition">로그인</button>
+			      </a>
+			      <a href="/signup">
+			        <button class="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition">회원가입</button>
+			      </a>
+			    </div>
+			  </div>
+			</header>  
+</th:block>
+</html>

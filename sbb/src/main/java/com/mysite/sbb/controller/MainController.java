@@ -42,4 +42,3 @@ public class MainController
     		return "community_write";
     }
 }
-                                      
