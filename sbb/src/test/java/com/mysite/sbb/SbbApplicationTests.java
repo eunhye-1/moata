@@ -15,11 +15,11 @@ class SbbApplicationTests {
     @Test
     void directSaveToDB() {
         User user = new User();
-        user.setUserId("test123");
+        user.setUserId("test1234");
         user.setPassword("1234");
         user.setEmail("test@test.com");
         user.setPhoneNumber("01012341234");
-        user.setPermission('A');
+        user.setPermission("user");
 
         userRepository.save(user);
     }

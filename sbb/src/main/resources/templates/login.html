@@ -28,14 +28,14 @@
 		          </div>
 
 		          <!-- Login Form -->
-		          <form class="space-y-4">
+		          <form class="space-y-4" action="/login" method="post">
 		            <div>
 		              <label class="block text-sm font-medium mb-2">아이디</label>
 		              <div class="relative">
 		                <svg class="absolute left-3 top-3 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 		                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
 		                </svg>
-		                <input type="email" placeholder="아이디를 입력하세요" class="w-full pl-10 pr-3 py-2.5 border border-blue-100 rounded-lg focus:outline-none focus:border-blue-600">
+		                <input type="text" name="userId" placeholder="아이디를 입력하세요" class="w-full pl-10 pr-3 py-2.5 border border-blue-100 rounded-lg focus:outline-none focus:border-blue-600">
 		              </div>
 		            </div>
 
@@ -45,8 +45,11 @@
 		                <svg class="absolute left-3 top-3 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 		                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
 		                </svg>
-		                <input type="password" placeholder="비밀번호를 입력하세요" class="w-full pl-10 pr-10 py-2.5 border border-blue-100 rounded-lg focus:outline-none focus:border-blue-600">
+		                <input type="password" name="password" placeholder="비밀번호를 입력하세요" class="w-full pl-10 pr-10 py-2.5 border border-blue-100 rounded-lg focus:outline-none focus:border-blue-600">
 		              </div>
+		            </div>
+		            <div class="text-red-500 text-sm">
+		            		[[${error}]]
 		            </div>
 		            <button type="submit" class="w-full py-3 text-lg text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-lg hover:shadow-xl transition">
 		              로그인
@@ -61,34 +64,6 @@
 		      </div>
 		    </div>
 		  </div>
-		  <!-- JavaScript 추가 및 로그인 기능 구현 -->
-		  <script src="app.js"></script>
-		  <script>
-		    document.addEventListener('DOMContentLoaded', () => {
-		      const loginForm = document.querySelector('form');
-		      
-		      loginForm.addEventListener('submit', (e) => {
-		        e.preventDefault();
-		        
-		        const email = loginForm.querySelector('input[type="email"]').value;
-		        const password = loginForm.querySelector('input[type="password"]').value;
-		        
-		        if (!email || !password) {
-		          TaxiShare.toast.show('이메일과 비밀번호를 입력해주세요.', 'error');
-		          return;
-		        }
-		        
-		        // 로그인 처리
-		        TaxiShare.auth.login(email, password);
-		        TaxiShare.toast.show('로그인 성공!', 'success');
-		        
-		        // 메인 페이지로 이동
-		        setTimeout(() => {
-		          window.location.href = 'index.html';
-		        }, 1000);
-		      });
-		    });
-		  </script>
 		</body>
     </p>
 </th:block>

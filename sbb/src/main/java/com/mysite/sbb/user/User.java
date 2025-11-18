@@ -24,14 +24,14 @@ public class User{
 	@Column(length=20, nullable=false) // 비밀번호
 	private String password;
 	
-	@Column(length=50, nullable=false,unique=true) // 이메일주소
+	@Column(length=50,unique=true) // 이메일주소
 	private String email;
 	
 	@Column(length=20, nullable=false, unique=true) // 전화번호
 	private String phoneNumber;
 	
 	@Column(length=20)
-	private Character permission;
+	private String permission;
 	
 	// @OneToMany 구현해야 함.
 	// private 
