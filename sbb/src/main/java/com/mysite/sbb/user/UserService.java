@@ -34,11 +34,36 @@ public class UserService {
             throw new RuntimeException("아이디가 존재하지 않습니다.");
         }
 
-        if (!user.getPassword().equals(password)) {
+        if (user.getPassword() == null || !user.getPassword().equals(password)) {
             throw new RuntimeException("비밀번호가 일치하지 않습니다.");
         }
 
         return user; // 로그인 성공 → user 반환
+    }
+    
+    public void signup(String userId, String password, String phoneNumber, String passwordRe) {
+    		if(userRepository.existsByUserId(userId)) {
+    			throw new RuntimeException("이미 사용 중인 아이디입니다.");
+    			
+    		}
+    		
+    		if(userRepository.existsByPhoneNumber(phoneNumber)) {
+    			throw new RuntimeException("이미 등록된 전화번호입니다.");
+    		}
+    		
+    		if(!password.equals(passwordRe)) {
+    			throw new RuntimeException("비밀번호를 다시 입력하십시오.");
+    		}
+    		
+    		
+    		User user = new User();
+    		user.setUserId(userId);
+    		user.setPassword(password);
+    		// user.setEmail(email);
+    		user.setPhoneNumber(phoneNumber);
+    		user.setPermission("user");
+    		
+    		userRepository.save(user);
     }
 
 }
