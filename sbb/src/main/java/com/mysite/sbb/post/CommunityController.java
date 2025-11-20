@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import jakarta.servlet.http.HttpSession;
 
-import com.mysite.sbb.user.User;
+import com.mysite.sbb.user.SiteUser;
 import com.mysite.sbb.user.UserService;
 
 import lombok.RequiredArgsConstructor;
