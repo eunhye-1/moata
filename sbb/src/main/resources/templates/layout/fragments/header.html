@@ -20,7 +20,18 @@
 			    </nav>
 			    <div class="flex items-center gap-3 absolute right-4">
 			      <a href="/login">
-			        <button class="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition">로그인</button>
+					<form th:action="@{/login}" sec:authorize="isAnonymous()">
+					    <button type="submit"
+					        class="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition">
+					        로그인
+					    </button>
+					</form>
+					<form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+					    <button type="submit"
+					        class="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition">
+					        로그아웃
+					    </button>
+					</form>
 			      </a>
 			      <a href="/signup">
 			        <button class="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition">회원가입</button>

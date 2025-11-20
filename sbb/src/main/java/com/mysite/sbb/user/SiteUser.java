@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity 
-public class User{
+public class SiteUser{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -21,11 +21,8 @@ public class User{
 	@Column(length=20, nullable=false)
 	private String userId;
 	
-	@Column(length=20, nullable=false) // 비밀번호
+	@Column(length=200, nullable=false) // 비밀번호
 	private String password;
-	
-	@Column(length=50,unique=true) // 이메일주소
-	private String email;
 	
 	@Column(length=20, nullable=false, unique=true) // 전화번호
 	private String phoneNumber;
