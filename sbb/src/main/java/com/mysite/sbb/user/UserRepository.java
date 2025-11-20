@@ -1,10 +1,12 @@
 package com.mysite.sbb.user;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User,Integer>
+public interface UserRepository extends JpaRepository<SiteUser,Integer>
 {
-	User findByUserId(String userId);
+	Optional<SiteUser> findByUserId(String userId);
 	
 	boolean existsByUserId(String userId);
 	
