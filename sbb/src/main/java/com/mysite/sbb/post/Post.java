@@ -12,7 +12,7 @@ import lombok.Setter;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.*;
 
-import com.mysite.sbb.user.User; // 유저 엔티티 가져오기
+import com.mysite.sbb.user.SiteUser; // 유저 엔티티 가져오기
 
 @Getter
 @Setter
@@ -22,8 +22,8 @@ public class Post{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 	
-	@ManyToOne
-	private User user;
+	@ManyToOne //fk 걔 ㅇㅇ
+	private SiteUser user;
 
     @Column(length=10)
     private String category; 
