@@ -13,13 +13,7 @@ public class MainController
     {
     		return "main";
     }
-    
-    @GetMapping("/community")
-    public String communityPage()
-    {
-    		return "community";
-    }
-    
+   
     @GetMapping("/chat")
     public String chatyPage()
     {
@@ -30,5 +24,5 @@ public class MainController
     {
     		return "profile";
     }
+    
 }
-                                      

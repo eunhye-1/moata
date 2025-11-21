@@ -1,323 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charSet="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/_next/static/css/13259dc9ccfa6acd.css" data-precedence="next" />
-    <link rel="stylesheet" href="/_next/static/css/cf24feef53b18647.css" data-precedence="next" />
-    <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-8f76acfb24a4b55b.js" />
-    <script src="/_next/static/chunks/fd9d1056-f9f33dc1c3f8eb7a.js" async=""></script>
-    <script src="/_next/static/chunks/117-9e3a433a82aaa8e8.js" async=""></script>
-    <script src="/_next/static/chunks/main-app-465bdc84f537e4d8.js" async=""></script>
-    <script src="/_next/static/chunks/253-fe9a53ddeb3fa11b.js" async=""></script>
-    <script src="/_next/static/chunks/440-533e48b5a51f4703.js" async=""></script>
-    <script src="/_next/static/chunks/app/chat/page-fa44af36509019bb.js" async=""></script>
-    <script src="/_next/static/chunks/app/layout-65806532ef820462.js" async=""></script>
-    <title>v0 App</title>
-    <meta name="description" content="Created with v0" />
-    <meta name="generator" content="v0.app" />
-    <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
-  </head>
-  <body class="font-sans __variable_fb8f2c __variable_f910ec">
-    <!--$-->
-    <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      <div class="fixed inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl"></div>
-      </div>
-      <div class="relative z-10 container mx-auto px-4 py-8">
-        <div class="flex items-center gap-4 mb-6">
-          <button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-5 w-5">
-              <path d="m12 19-7-7 7-7"></path>
-              <path d="M19 12H5"></path>
-            </svg>
-          </button>
-          <div>
-            <h1 class="text-3xl font-bold text-gray-900">실시간 채팅</h1>
-            <p class="text-gray-600 mt-1">매칭된 택시 메이트들과 소통하세요</p>
-          </div>
-        </div>
-        <div class="grid lg:grid-cols-3 gap-6 h-[calc(100vh-200px)]">
-          <div data-slot="card" class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 lg:col-span-1 backdrop-blur-sm bg-white/80 border-white/20 shadow-xl">
-            <div data-slot="card-header" class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
-              <div data-slot="card-title" class="leading-none font-semibold flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-5 w-5 text-blue-600">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>채팅방 목록
-              </div>
-            </div>
-            <div data-slot="card-content" class="p-0">
-              <div dir="ltr" data-slot="scroll-area" class="relative h-[calc(100vh-300px)]" style="position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px">
-                <style>
-                  [data-radix-scroll-area-viewport] {
-                    scrollbar-width: none;
-                    -ms-overflow-style: none;
-                    -webkit-overflow-scrolling: touch;
-                  }
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
+    <p>
+		<head>
+		    <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>Moata-실시간 채팅</title>
+		    <script src="https://cdn.tailwindcss.com"></script>
+		    <link rel="stylesheet" href="styles.css">
+		</head>
+		<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+		    <!-- Background decorations -->
+		    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+		        <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
+		        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl"></div>
+		    </div>
 
-                  [data-radix-scroll-area-viewport]::-webkit-scrollbar {
-                    display: none
-                  }
-                </style>
-                <div data-radix-scroll-area-viewport="" data-slot="scroll-area-viewport" class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1" style="overflow-x:hidden;overflow-y:hidden">
-                  <div style="min-width:100%;display:table">
-                    <div class="space-y-2 p-4">
-                      <div class="p-4 rounded-lg cursor-pointer transition-all duration-200 hover:bg-blue-50 bg-blue-100 border-2 border-blue-200">
-                        <div class="flex items-start justify-between mb-2">
-                          <div class="flex-1">
-                            <h3 class="font-semibold text-gray-900 text-sm">강남역 → 홍대입구</h3>
-                            <p class="text-xs text-gray-600 mt-1">강남역 2번출구 → 홍대입구역</p>
-                          </div>
-                        </div>
-                        <div class="flex items-center gap-2 mb-2">
-                          <span data-slot="badge" class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-secondary/90 text-xs text-white bg-blue-500">매칭완료</span>
-                          <span class="text-xs text-gray-500">2
-                            <!-- -->명
-                          </span>
-                          <span class="text-xs text-gray-500">•
-                            <!-- -->25분
-                          </span>
-                        </div>
-                        <p class="text-xs text-gray-600 truncate">도착했어요! 어디 계신가요?</p>
-                      </div>
-                      <div class="p-4 rounded-lg cursor-pointer transition-all duration-200 hover:bg-blue-50 bg-gray-50">
-                        <div class="flex items-start justify-between mb-2">
-                          <div class="flex-1">
-                            <h3 class="font-semibold text-gray-900 text-sm">신촌 → 여의도</h3>
-                            <p class="text-xs text-gray-600 mt-1">신촌역 → 여의도 IFC몰</p>
-                          </div>
-                          <span data-slot="badge" class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-destructive text-white [a&amp;]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 text-xs">2</span>
-                        </div>
-                        <div class="flex items-center gap-2 mb-2">
-                          <span data-slot="badge" class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-secondary/90 text-xs text-white bg-yellow-500">대기중</span>
-                          <span class="text-xs text-gray-500">3
-                            <!-- -->명
-                          </span>
-                          <span class="text-xs text-gray-500">•
-                            <!-- -->30분
-                          </span>
-                        </div>
-                        <p class="text-xs text-gray-600 truncate">한 분 더 기다리고 있어요</p>
-                      </div>
-                      <div class="p-4 rounded-lg cursor-pointer transition-all duration-200 hover:bg-blue-50 bg-gray-50">
-                        <div class="flex items-start justify-between mb-2">
-                          <div class="flex-1">
-                            <h3 class="font-semibold text-gray-900 text-sm">잠실 → 강남</h3>
-                            <p class="text-xs text-gray-600 mt-1">잠실역 → 강남역</p>
-                          </div>
-                        </div>
-                        <div class="flex items-center gap-2 mb-2">
-                          <span data-slot="badge" class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-secondary/90 text-xs text-white bg-gray-500">완료</span>
-                          <span class="text-xs text-gray-500">2
-                            <!-- -->명
-                          </span>
-                          <span class="text-xs text-gray-500">•
-                            <!-- -->20분
-                          </span>
-                        </div>
-                        <p class="text-xs text-gray-600 truncate">택시비 정산 완료되었습니다</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-slot="card" class="text-card-foreground gap-6 rounded-xl border py-6 lg:col-span-2 backdrop-blur-sm bg-white/80 border-white/20 shadow-xl flex flex-col">
-            <div data-slot="card-header" class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 border-b border-gray-200">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                  <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-5 w-5 text-blue-600">
-                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                      <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <div>
-                      <h2 class="font-semibold text-gray-900">강남역 → 홍대입구</h2>
-                      <p class="text-sm text-gray-600">강남역 2번출구 → 홍대입구역</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span data-slot="badge" class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-secondary/90 text-white bg-blue-500">매칭완료</span>
-                  <button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-4 w-4">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                  </button>
-                  <button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical h-4 w-4">
-                      <circle cx="12" cy="12" r="1"></circle>
-                      <circle cx="12" cy="5" r="1"></circle>
-                      <circle cx="12" cy="19" r="1"></circle>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="flex items-center gap-4 text-sm text-gray-600 mt-2">
-                <div class="flex items-center gap-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>2
-                  <!-- -->명 참여
-                </div>
-                <div class="flex items-center gap-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-4 w-4">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>예상 시간:
-                  <!-- -->25분
-                </div>
-              </div>
-            </div>
-            <div data-slot="card-content" class="flex-1 p-0">
-              <div dir="ltr" data-slot="scroll-area" class="relative h-[calc(100vh-450px)] p-4" style="position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px">
-                <style>
-                  [data-radix-scroll-area-viewport] {
-                    scrollbar-width: none;
-                    -ms-overflow-style: none;
-                    -webkit-overflow-scrolling: touch;
-                  }
+		    <div class="relative z-10 container mx-auto px-4 py-8">
+		        <div class="mb-6">
+		            <h1 class="text-3xl font-bold text-gray-900">실시간 채팅</h1>
+		            <p class="text-gray-600 mt-1">매칭된 택시 메이트들과 소통하세요</p>
+		        </div>
 
-                  [data-radix-scroll-area-viewport]::-webkit-scrollbar {
-                    display: none
-                  }
-                </style>
-                <div data-radix-scroll-area-viewport="" data-slot="scroll-area-viewport" class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1" style="overflow-x:hidden;overflow-y:hidden">
-                  <div style="min-width:100%;display:table">
-                    <div class="space-y-4">
-                      <div>
-                        <div class="flex justify-center">
-                          <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">김민수님과 매칭되었습니다! 택시 공유를 시작해보세요.</div>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="flex gap-3 ">
-                          <span data-slot="avatar" class="relative flex size-8 shrink-0 overflow-hidden rounded-full h-8 w-8">
-                            <span data-slot="avatar-fallback" class="bg-muted flex size-full items-center justify-center rounded-full">김</span>
-                          </span>
-                          <div class="flex flex-col items-start">
-                            <div class="flex items-center gap-2 mb-1">
-                              <span class="text-sm font-medium text-gray-700">김민수</span>
-                              <span class="text-xs text-gray-500">16:39</span>
-                            </div>
-                            <div class="max-w-xs lg:max-w-md px-4 py-2 rounded-2xl bg-gray-100 text-gray-900">
-                              <p class="text-sm">안녕하세요! 강남역에서 만날까요?</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="flex gap-3 flex-row-reverse">
-                          <span data-slot="avatar" class="relative flex size-8 shrink-0 overflow-hidden rounded-full h-8 w-8">
-                            <span data-slot="avatar-fallback" class="bg-muted flex size-full items-center justify-center rounded-full">나</span>
-                          </span>
-                          <div class="flex flex-col items-end">
-                            <div class="flex items-center gap-2 mb-1">
-                              <span class="text-xs text-gray-500">16:44</span>
-                            </div>
-                            <div class="max-w-xs lg:max-w-md px-4 py-2 rounded-2xl bg-blue-600 text-white">
-                              <p class="text-sm">네 좋습니다! 2번 출구 앞에서 만나요</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="flex gap-3 ">
-                          <span data-slot="avatar" class="relative flex size-8 shrink-0 overflow-hidden rounded-full h-8 w-8">
-                            <span data-slot="avatar-fallback" class="bg-muted flex size-full items-center justify-center rounded-full">김</span>
-                          </span>
-                          <div class="flex flex-col items-start">
-                            <div class="flex items-center gap-2 mb-1">
-                              <span class="text-sm font-medium text-gray-700">김민수</span>
-                              <span class="text-xs text-gray-500">16:49</span>
-                            </div>
-                            <div class="max-w-xs lg:max-w-md px-4 py-2 rounded-2xl bg-gray-100 text-gray-900">
-                              <div class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-navigation h-4 w-4">
-                                  <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
-                                </svg>
-                                <span class="text-sm">현재 위치를 공유했습니다</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="flex gap-3 flex-row-reverse">
-                          <span data-slot="avatar" class="relative flex size-8 shrink-0 overflow-hidden rounded-full h-8 w-8">
-                            <span data-slot="avatar-fallback" class="bg-muted flex size-full items-center justify-center rounded-full">나</span>
-                          </span>
-                          <div class="flex flex-col items-end">
-                            <div class="flex items-center gap-2 mb-1">
-                              <span class="text-xs text-gray-500">16:59</span>
-                            </div>
-                            <div class="max-w-xs lg:max-w-md px-4 py-2 rounded-2xl bg-blue-600 text-white">
-                              <p class="text-sm">도착했어요! 어디 계신가요?</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="border-t border-gray-200 p-4">
-              <div class="flex gap-2">
-                <button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9 shrink-0 bg-transparent">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-4 w-4">
-                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                </button>
-                <input data-slot="input" class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex-1" placeholder="메시지를 입력하세요..." value="" />
-                <button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3 shrink-0" disabled="">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send h-4 w-4">
-                    <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
-                    <path d="m21.854 2.147-10.94 10.939"></path>
-                  </svg>
-                </button>
-              </div>
-              <div class="flex items-center gap-2 mt-2 text-xs text-gray-500">
-                <span>Enter로 전송</span>
-                <div data-orientation="vertical" role="none" data-slot="separator" class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px h-3"></div>
-                <span>Shift + Enter로 줄바꿈</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--$!-->
-    <template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"></template>
-    <!--/$-->
-    <!--/$-->
-    <script src="/_next/static/chunks/webpack-8f76acfb24a4b55b.js" async=""></script>
-    <script>
-      (self.__next_f = self.__next_f || []).push([0]);
-      self.__next_f.push([2, null])
-    </script>
-    <script>
-      self.__next_f.push([1, "1:HL[\"/_next/static/css/13259dc9ccfa6acd.css\",\"style\"]\n2:HL[\"/_next/static/css/cf24feef53b18647.css\",\"style\"]\n"])
-    </script>
-    <script>
-      self.__next_f.push([1, "3:I[2846,[],\"\"]\n5:I[9107,[],\"ClientPageRoot\"]\n6:I[9531,[\"253\",\"static/chunks/253-fe9a53ddeb3fa11b.js\",\"440\",\"static/chunks/440-533e48b5a51f4703.js\",\"929\",\"static/chunks/app/chat/page-fa44af36509019bb.js\"],\"default\",1]\n7:I[4707,[],\"\"]\n8:I[6423,[],\"\"]\n9:\"$Sreact.suspense\"\na:I[9050,[\"185\",\"static/chunks/app/layout-65806532ef820462.js\"],\"Analytics\"]\nc:I[1060,[],\"\"]\nd:[]\n"])
-    </script>
-    <script>
-      self.__next_f.push([1, "0:[\"$\",\"$L3\",null,{\"buildId\":\"UpHREtxVAS5Kpf84iM-f9\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"chat\"],\"initialTree\":[\"\",{\"children\":[\"chat\",{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"chat\",{\"children\":[\"__PAGE__\",{},[[\"$L4\",[\"$\",\"$L5\",null,{\"props\":{\"params\":{},\"searchParams\":{}},\"Component\":\"$6\"}],null],null],null]},[null,[\"$\",\"$L7\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"chat\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/13259dc9ccfa6acd.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/cf24feef53b18647.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"className\":\"font-sans __variable_fb8f2c __variable_f910ec\",\"children\":[\"$\",\"$9\",null,{\"children\":[[\"$\",\"$L7\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}],[\"$\",\"$La\",null,{}]]}]}]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$Lb\"],\"globalErrorComponent\":\"$c\",\"missingSlots\":\"$Wd\"}]\n"])
-    </script>
-    <script>
-      self.__next_f.push([1, "b:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"v0 App\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Created with v0\"}],[\"$\",\"meta\",\"4\",{\"name\":\"generator\",\"content\":\"v0.app\"}]]\n4:null\n"])
-    </script>
-  </body>
+		        <div class="grid lg:grid-cols-3 gap-6 h-[calc(100vh-200px)]">
+		            <!-- Chat Rooms List -->
+		            <div class="backdrop-blur-sm bg-white/80 border rounded-lg shadow-xl">
+		                <div class="p-4 border-b">
+		                    <h2 class="font-semibold">채팅방 목록</h2>
+		                </div>
+		                <div class="p-4 space-y-2">
+		                    <div class="p-4 rounded-lg bg-blue-100 border-2 border-blue-200 cursor-pointer">
+		                        <div class="flex items-start justify-between mb-2">
+		                            <div>
+		                                <h3 class="font-semibold text-sm">강남역 → 홍대입구</h3>
+		                                <p class="text-xs text-gray-600 mt-1">강남역 2번출구 → 홍대입구역</p>
+		                            </div>
+		                        </div>
+		                        <div class="flex items-center gap-2 mb-2">
+		                            <span class="text-xs bg-blue-500 text-white px-2 py-1 rounded">매칭완료</span>
+		                            <span class="text-xs text-gray-500">2명</span>
+		                            <span class="text-xs text-gray-500">• 25분</span>
+		                        </div>
+		                        <p class="text-xs text-gray-600 truncate">도착했어요! 어디 계신가요?</p>
+		                    </div>
+		                </div>
+		            </div>
+
+		            <!-- Chat Interface -->
+		            <div class="lg:col-span-2 backdrop-blur-sm bg-white/80 border rounded-lg shadow-xl flex flex-col">
+		                <div class="p-4 border-b">
+		                    <div class="flex items-center justify-between">
+		                        <div>
+		                            <h2 class="font-semibold text-gray-900">강남역 → 홍대입구</h2>
+		                            <p class="text-sm text-gray-600">강남역 2번출구 → 홍대입구역</p>
+		                        </div>
+		                    </div>
+		                </div>
+
+		                <!-- Messages -->
+		                <div class="flex-1 p-4 overflow-y-auto">
+		                    <div class="space-y-4">
+		                        <div class="flex justify-center">
+		                            <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+		                                김민수님과 매칭되었습니다!
+		                            </div>
+		                        </div>
+		                        <div class="flex gap-3">
+		                            <div class="w-8 h-8 bg-blue-500 rounded-full"></div>
+		                            <div class="flex flex-col">
+		                                <div class="flex items-center gap-2 mb-1">
+		                                    <span class="text-sm font-medium text-gray-700">김민수</span>
+		                                    <span class="text-xs text-gray-500">07:25</span>
+		                                </div>
+		                                <div class="bg-gray-100 text-gray-900 px-4 py-2 rounded-2xl">
+		                                    <p class="text-sm">안녕하세요! 강남역에서 만날까요?</p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="flex gap-3 flex-row-reverse">
+		                            <div class="w-8 h-8 bg-green-500 rounded-full"></div>
+		                            <div class="flex flex-col items-end">
+		                                <div class="flex items-center gap-2 mb-1">
+		                                    <span class="text-xs text-gray-500">07:30</span>
+		                                </div>
+		                                <div class="bg-blue-600 text-white px-4 py-2 rounded-2xl">
+		                                    <p class="text-sm">네 좋습니다! 2번 출구 앞에서 만나요</p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+
+		                <!-- Message Input -->
+		                <div class="border-t p-4">
+		                    <form id="messageForm" class="flex gap-2">
+		                        <input id="messageInput" type="text" placeholder="메시지를 입력하세요..." 
+		                               class="flex-1 px-3 py-2 border rounded-lg">
+		                        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">전송</button>
+		                    </form>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+
+		    <!-- JavaScript 추가 및 채팅 기능 구현 -->
+		    <script src="app.js"></script>
+		    <script>
+		        document.addEventListener('DOMContentLoaded', () => {
+		            const messageForm = document.getElementById('messageForm');
+		            const messageInput = document.getElementById('messageInput');
+		            
+		            messageForm.addEventListener('submit', (e) => {
+		                e.preventDefault();
+		                
+		                const message = messageInput.value.trim();
+		                if (!message) return;
+		                
+		                // 메시지 전송 시뮬레이션
+		                TaxiShare.toast.show('메시지가 전송되었습니다.', 'success');
+		                messageInput.value = '';
+		            });
+		        });
+		    </script>
+		</body>
+    </p>
+</th:block>
 </html>
