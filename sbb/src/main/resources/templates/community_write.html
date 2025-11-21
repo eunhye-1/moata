@@ -22,11 +22,12 @@
 		                <div>
 		                    <label class="text-base font-semibold block mb-2">카테고리</label>
 		                    <select name="category" class="px-3 py-2 border rounded-lg">
-		                        <option>카테고리를 선택하세요</option>
+		                        <option>자유</option>
+		                     
 		                        <option>꿀팁</option>
 		                        <option>질문</option>
 		                        <option>정기경로</option>
-		                        <option>후기</option>
+		                        
 		                    </select>
 		                </div>
 
@@ -56,6 +57,9 @@
 		                        <button class="px-4 py-2 border rounded-lg">+</button>
 		                    </div>
 		                </div>
+		                
+		                <!-- userId -->
+		                <input type="hidden" name="userId" th:value="${userId}">
 		                
 		                <div class="mt-6 flex justify-end">
 				    		<button type="submit"

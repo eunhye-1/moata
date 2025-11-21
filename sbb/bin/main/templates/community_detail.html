@@ -20,10 +20,12 @@
 		            <div class="bg-white border rounded-lg shadow-xl p-8 mb-6">
 		                <div class="mb-6">
 		                    <div class="flex items-center gap-2 mb-4">
-		                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">고정</span>
-		                        <span class="border text-xs px-2 py-1 rounded">정기경로</span>
+		                        
+		                        <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded" th:text="${post.category}"></span>
 		                    </div>
-		                    <h1 class="text-3xl font-bold mb-4">강남역 → 여의도 출퇴근 정기 멤버 모집합니다!</h1>
+		                    
+		                    <!-- 제목 -->
+		                    <h1 class="text-3xl font-bold mb-4" th:text="${post.title}"></h1>
 		                    <div class="flex flex-wrap gap-2 mb-4">
 		                        <span class="bg-gray-100 text-xs px-2 py-1 rounded">#강남역</span>
 		                        <span class="bg-gray-100 text-xs px-2 py-1 rounded">#여의도</span>
@@ -36,10 +38,11 @@
 		                    <div class="flex items-center gap-3">
 		                        <div class="w-12 h-12 bg-blue-500 rounded-full"></div>
 		                        <div>
-		                            <div class="font-semibold">김민수</div>
+		                            <div class="font-semibold" th:text="${post.user.userId}"></div>
 		                            <div class="flex items-center gap-3 text-sm text-gray-600">
-		                                <span>127회 이용</span>
-		                                <span>2025-01-15 14:30</span>
+		                   
+		                                <span th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></span>
+
 		                            </div>
 		                        </div>
 		                    </div>
@@ -48,15 +51,15 @@
 
 		                <!-- Content -->
 		                <div class="prose max-w-none mb-6">
-		                    <p class="leading-relaxed">매일 오전 8시 강남역에서 여의도로 출근하는 정기 택시 멤버를 찾고 있어요. 현재 2명이고 2명 더 모집중입니다.</p>
-		                    <p class="leading-relaxed mt-4">한 달에 약 15만원 정도 절약할 수 있어요. 출근 시간이 비슷하신 분들과 함께 하면 좋을 것 같습니다.</p>
+		                    <p class="leading-relaxed" th:text="${post.content}"></p>
+		                    
 		                </div>
 
 		                <!-- Actions -->
 		                <div class="flex items-center justify-between pt-6 border-t">
 		                    <div class="flex items-center gap-6 text-sm text-gray-600">
-		                        <span>👁️ 156</span>
-		                        <span>💬 8</span>
+		                        <span th:text="'조회수'+' ' + ${post.viewCnt}"></span>
+		                        <span>댓글 8</span>
 		                    </div>
 		                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg">❤️ 좋아요 24</button>
 		                </div>

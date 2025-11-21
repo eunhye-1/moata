@@ -5,7 +5,7 @@
 		<head>
 		    <meta charset="UTF-8">
 		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		    <title>커뮤니티 - TaxiShare</title>
+		    <title>Moata 커뮤니티</title>
 		    <script src="https://cdn.tailwindcss.com"></script>
 		    <link rel="stylesheet" href="styles.css">
 		</head>
@@ -41,37 +41,51 @@
 		        <div class="grid lg:grid-cols-4 gap-8">
 		            <!-- Main Content -->
 		            <div class="lg:col-span-3 space-y-6">
-		                <!-- Post Card -->
-		                <a href="community-detail.html">
-		                    <div class="bg-white border rounded-lg p-6 hover:shadow-xl transition cursor-pointer">
-		                        <div class="flex items-start gap-4">
-		                            <div class="w-12 h-12 bg-blue-500 rounded-full"></div>
-		                            <div class="flex-1">
-		                                <div class="flex items-center gap-2 mb-2">
-		                                    <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">고정</span>
-		                                    <span class="border text-xs px-2 py-1 rounded">정기경로</span>
-		                                    <span class="text-sm text-gray-500">2시간 전</span>
-		                                </div>
-		                                <a href="/community_detail">
-		                                <h3 class="text-lg font-semibold mb-2">강남역 → 여의도 출퇴근 정기 멤버 모집합니다!</h3>
-		                                </a>
-		                                <p class="text-gray-600 mb-3 line-clamp-2">매일 오전 8시 강남역에서 여의도로 출근하는 정기 택시 멤버를 찾고 있어요...</p>
-		                                <div class="flex flex-wrap gap-1 mb-3">
-		                                    <span class="bg-gray-100 text-xs px-2 py-1 rounded">#강남역</span>
-		                                    <span class="bg-gray-100 text-xs px-2 py-1 rounded">#여의도</span>
-		                                </div>
-		                                <div class="flex items-center justify-between">
-		                                    <div class="flex items-center gap-4 text-sm text-gray-600">
-		                                        <span>❤️ 24</span>
-		                                        <span>💬 8</span>
-		                                        <span>👁️ 156</span>
-		                                    </div>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                </a>
-		            </div>
+
+			    <!-- DB에서 받아온 postList 반복 -->
+			    <div th:each="post : ${postList}">
+			        <a th:href="@{'/community_detail/' + ${post.id}}"> <!-- 포스트 아이디로 반환 -->
+			            <div class="bg-white border rounded-lg p-6 hover:shadow-xl transition cursor-pointer">
+			                <div class="flex items-start gap-4">
+			                    <div class="w-12 h-12 bg-blue-500 rounded-full"></div>
+			
+			                    <div class="flex-1">
+			
+			                        <!-- 카테고리 + 날짜 -->
+			                        <div class="flex items-center gap-2 mb-2">
+			                            <span class="border text-xs px-2 py-1 rounded"
+			                                  th:text="${post.category}">카테고리</span>
+			
+			                            <span class="text-sm text-gray-500"
+			                                  th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}">
+			                                작성일
+			                            </span>
+			                        </div>
+			
+			                        <!-- 제목 -->
+			                        <h3 class="text-lg font-semibold mb-2" 
+			                            th:text="${post.title}">게시글 제목</h3>
+			
+			                        <!-- 내용 일부 -->
+			                        <p class="text-gray-600 mb-3 line-clamp-2" 
+			                           th:text="${post.content}">내용 미리보기...</p>
+			
+			                        <div class="flex items-center justify-between">
+			                            <div class="flex items-center gap-4 text-sm text-gray-600">
+			                                <span>❤️ 0</span>
+			                                <span>댓글 0</span>
+			                                <span th:text="'조회수 ' + ${post.viewCnt}"></span>
+			                            </div>
+			                        </div>
+			
+			                    </div>
+			                </div>
+			            </div>
+			        </a>
+			    </div>
+			
+			</div>
+					            
 
 		            <!-- Sidebar -->
 		            <div class="space-y-6">
