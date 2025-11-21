@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+
+
 @RequiredArgsConstructor
 @Service
 public class UserService {
@@ -69,5 +73,19 @@ public class UserService {
     		
     		userRepository.save(user);
     }
+    
+    public String getCurrentUserId() //현재 로그인한 유저 아이디 리턴
+    {
+    		var auth=SecurityContextHolder.getContext().getAuthentication();
 
+    		 if (auth == null || !(auth.getPrincipal() instanceof UserDetails)) 
+    		 {
+    			 return null; // 로그인 안 한 상태
+    		 }
+
+	    UserDetails user = (UserDetails) auth.getPrincipal();
+	    return user.getUsername();
+    		
+    }
+	
 }

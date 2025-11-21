@@ -26,6 +26,9 @@
 		            <h1 class="text-2xl font-bold mb-2">로그인</h1>
 		            <p class="text-gray-600">Moata 계정으로 로그인하세요</p>
 		          </div>
+		          
+		          <p th:if="${param.needLogin}" style="color: red; margin-bottom: 20px; ">🚨로그인 후 글 작성이 가능합니다.</p>
+		          
 
 		          <!-- Login Form -->
 		          <form class="space-y-4" action="/login" method="post">
