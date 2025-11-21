@@ -17,6 +17,7 @@ public class CommunityController {
 	
 	private final PostRepository postRepository;
 	private final PostService postService;
+	private final UserService userService;
 	
 	@GetMapping("/community")
     public String communityList(Model model)
@@ -33,10 +34,18 @@ public class CommunityController {
     }
 	
 	@GetMapping("/community_write")
-    public String community_write()
-    {
-    		return "community_write";
-    }
+	public String community_write(Model model) 
+	{
+
+	    String userId = userService.getCurrentUserId();
+
+	    if (userId == null) {
+	        return "redirect:/login?needLogin";
+	    }
+
+	    model.addAttribute("userId", userId);
+	    return "community_write";
+	}
 	
 	@PostMapping("/community_write")
 	public String writeProcess(@RequestParam("title") String title,
